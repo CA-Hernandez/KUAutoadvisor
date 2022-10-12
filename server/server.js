@@ -4,9 +4,11 @@ const docparser = require('docparser-node');
 const client = new docparser.Client("33f16418fd16a4f66bd257153ac03b094cc786ff");
 const parserID = "cslfmvewjrvo";
 const fileUpload = require('express-fileupload');
-
-
+const multer = require('multer');
 const app = express();
+
+
+/*
 
 app.use(fileUpload());
 
@@ -45,47 +47,47 @@ app.post('/upload', (req, res) => {
 });
 
 
-
-/*
-
-//DOC PARSER API
-client.ping()
-  .then(function() {
-    console.log('authentication succeeded!')
-  })
-  .catch(function(err) {
-    console.log('authentication failed!')
-  })
-
-  client.getParsers()
-  .then(function (parsers) {
-    console.log(parsers)
-    // => [{"id":"someparserid","label":"My Document Parser"}]
-
-  })
-  .catch(function (err) {
-    console.log(err)
-  })
-
-  client.getResultsByDocument("cslfmvewjrvo", "fe81a5f3676e3403abc493bf17f87b10", {format: 'object'})
-  .then(function (result) {
-    //console.log(result[0].final)
-  })
-  .catch(function (err) {
-    console.log(err)
-  })
-
+app.listen(9999, () => console.log('Server Started...'));
 
 */
 
 
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'client/public/uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+
+const upload = multer({ storage });
+
+const fs = require('fs')
 
 
+// Upload Endpoint
+app.post('/upload', upload.single('file'), (req, res) => {
+  if (req.file === null) {
+    return res.status(400).json({ msg: 'No file uploaded' });
+  }
 
+  const file = req.file;
 
+  console.log(`${__dirname}/../client/public/uploads/${file.filename}`);
+
+  client.uploadFileByStream(parserID, fs.createReadStream(`${__dirname}/../client/public/uploads/${file.filename}`))
+    .then(function (result) {
+      Promise.resolve(console.log(result));
+    })
+    .catch(function (err) {
+      console.log(err.stack)
+    })
+
+  res.json({ fileName: file.name, filePath: `../client/public/uploads/${file.filename}` });
+
+});
 
 app.listen(9999, () => console.log('Server Started...'));
-
-
 
