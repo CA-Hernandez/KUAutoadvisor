@@ -75,17 +75,28 @@ app.post('/upload', upload.single('file'), (req, res) => {
 
   const file = req.file;
 
-  console.log(`${__dirname}/../client/public/uploads/${file.filename}`);
+  //console.log(`${__dirname}/../client/public/uploads/${file.filename}`);
 
   client.uploadFileByStream(parserID, fs.createReadStream(`${__dirname}/../client/public/uploads/${file.filename}`))
     .then(function (result) {
       Promise.resolve(console.log(result));
+      var docID = result.id;
+      return docID;
     })
     .catch(function (err) {
       console.log(err.stack)
     })
 
   res.json({ fileName: file.name, filePath: `../client/public/uploads/${file.filename}` });
+
+
+  client.getResultsByDocument(parserID, docID, {format: 'object'})
+  .then(function (result) {
+    console.log(result)
+  })
+  .catch(function (err) {
+    console.log(err)
+  })
 
 });
 
