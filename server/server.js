@@ -5,6 +5,7 @@ const client = new docparser.Client("33f16418fd16a4f66bd257153ac03b094cc786ff");
 const parserID = "cslfmvewjrvo";
 const multer = require('multer');
 const data = require('./TrasncriptJSON-2022-04-21.json')[0].final;
+const schedule = require('./schedule.json');
 
 const app = express();
 
@@ -24,16 +25,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 const fs = require('fs')
-
- 
-// Main page
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname), "/../client/public/index.html");
-});
-
-
-
-
 
 
 
@@ -79,6 +70,27 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
 
 });
+
+
+
+
+// Schedule
+app.get("/schedule", (req, res) => {
+
+//make function call to DB to generate schedule
+
+try{
+  return res.status(200).send(schedule); 
+} 
+catch (err) 
+{
+  console.error(err)
+  return res.status(500).json({ msg: 'An error occurred' })
+}
+});
+
+
+
 
 
 // This function delays the actions of whatever code precedes it

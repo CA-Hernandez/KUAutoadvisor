@@ -18,6 +18,7 @@ const FileUpload = () => {
   const [uploadedFile, setUploadedFile] = useState({});
   const [message, setMessage] = useState('');
   const [uploadPercentage, setUploadPercentage] = useState(0);
+  const [tableData,setTableData] = useState(true);
  
 
 
@@ -46,6 +47,8 @@ const onChange = e => {
         }
       });
       setData(res.data);
+      console.log(setData);
+      setTableData(false);
       
       // Clear percentage
       setTimeout(() => setUploadPercentage(0), 10000);
@@ -54,7 +57,7 @@ const onChange = e => {
 
       setUploadedFile({ fileName, filePath });
 
-      setMessage('File Uploaded');
+      setMessage('Transcript Uploaded');
     } catch (err) {
       if (err.response.status === 500) {
         setMessage('There was a problem with the server');
@@ -140,8 +143,14 @@ const onChange = e => {
           </div>
         </div>
       ) : null}
-      <Table columns={columns} data={data} />
-
+      {tableData ? (
+         <p/>
+         ):
+         ( 
+         <Table columns={columns} data={data} />
+         )
+      }
+      
     </Fragment>
   );
 };
@@ -149,4 +158,3 @@ const onChange = e => {
 export default FileUpload
  
  
-

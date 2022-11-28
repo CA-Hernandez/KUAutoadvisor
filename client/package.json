@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.61",
+    "antd": "^5.0.1",
     "axios": "^0.18.0",
+    "material-ui": "^0.20.2",
+    "nanoid": "^4.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-icons": "^4.6.0",

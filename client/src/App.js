@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Upload from './pages/Upload';
+import Schedule from './pages/Schedule';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => (
@@ -12,6 +13,7 @@ const App = () => (
         <Routes>
           <Route path = '/' exact element = {<Home/>}/>
           <Route path = '/upload' exact element = {<Upload/>}/>
+          <Route path = '/schedule' exact element = {<Schedule/>}/>
         </Routes>
 
     </Router>

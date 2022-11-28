@@ -23,7 +23,7 @@ export default function Table({ columns, data }) {
   */
   return (
     <center>
-    <table {...getTableProps()}>
+    <table class = "styled-table" {...getTableProps()}>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -37,7 +37,7 @@ export default function Table({ columns, data }) {
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()}>
+            <tr class="active-row" {...row.getRowProps()}>
               {row.cells.map(cell => {
                 return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
               })}

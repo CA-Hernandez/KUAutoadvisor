@@ -1,0 +1,22 @@
+[
+   {"id":1,"course":"ANT 880","coursename":"ANTHROPOLOGY ELECTIVE","attempted":""},
+   {"id":2,"course":"CMP 100","coursename":"EFFECTIVE COMPOSITION","attempted":""},
+   {"id":3,"course":"GEL 890","coursename":"GEOL ELECTIVE(NON-LAB)","attempted":""},
+   {"id":4,"course":"HEA 102","coursename":"INTRO TO HEALTH\/WELLNESS","attempted":""},
+   {"id":5,"course":"HIS 880","coursename":"HISTORY ELECTIVE","attempted":""},
+   {"id":6,"course":"SOC 10","coursename":"PRINCIPLES OF SOCIOLOGY","attempted":""},
+   {"id":7,"course":"CMP 200","coursename":"RESEARCH AND","attempted":"3.00"},
+   {"id":8,"course":"ENG 275","coursename":"ARCHETYPAL WOMEN","attempted":"3.00"},
+   {"id":9,"course":"MUS 10","coursename":"INTRO TO MUSIC","attempted":"3.00"},
+   {"id":10,"course":"WRI 100","coursename":"READING & WRITING IN","attempted":"3.00"},
+   {"id":11,"course":"WRI 212","coursename":"INTRO TO MASS COMMUN","attempted":"3.00"},
+   {"id":12,"course":"ARH 24","coursename":"ART HISTORY A","attempted":"3.00"},
+   {"id":13,"course":"COM 10","coursename":"FUNDAMENTALS OF ORAL","attempted":"3.00"},
+   {"id":14,"course":"MAT 17","coursename":"INTRO MATH","attempted":"3.00"},
+   {"id":15,"course":"WRI 108","coursename":"INTRO TO CREATIVE","attempted":"3.00"},
+   {"id":16,"course":"WRI 213","coursename":"COPY EDITING: REVISION &","attempted":"3.00"},
+   {"id":17,"course":"AST 42","coursename":"STARS, GALAXIES, & BLACK","attempted":"3.00"},
+   {"id":18,"course":"PHI 30","coursename":"INTRO TO PHILOSOPHY","attempted":"3.00"},
+   {"id":19,"course":"POL 10","coursename":"INTRO TO AMERICAN","attempted":"3.00"}
+]
+
