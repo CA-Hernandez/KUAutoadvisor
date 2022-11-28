@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect,useMemo } from 'react';
 import axios from 'axios'
 import { nanoid } from "nanoid";
-
 import "../App.css";
 import ReadOnlyRow from './ReadRow';
 import EditableRow from './EditableRow';
@@ -28,7 +27,7 @@ function ScheduleComponent() {
   //GET Request to get the data
   const getData = async () =>{ 
     try {
-      const res = await axios.get('/schedule')
+      const res = await axios.get('/api/schedule')
       setData(res.data)
 
     } 

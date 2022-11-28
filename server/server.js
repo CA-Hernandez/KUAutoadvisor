@@ -30,7 +30,7 @@ const fs = require('fs')
 
 
 // Upload Route
-app.post('/upload', upload.single('file'), async (req, res) => {
+app.post('/api/upload', upload.single('file'), async (req, res) => {
   const file = req.file;
   const stream = fs.createReadStream(`${__dirname}/../client/public/uploads/${file.filename}`);
 
@@ -75,7 +75,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
 
 // Schedule
-app.get("/schedule", (req, res) => {
+app.get("/api/schedule", (req, res) => {
 
 //make function call to DB to generate schedule
 
@@ -101,5 +101,5 @@ function delay(time) {
 
 
 
-app.listen(9999, () => console.log('Server Started...'));
+app.listen(5000, () => console.log('Server Started...'));
 
