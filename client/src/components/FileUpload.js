@@ -35,9 +35,6 @@ const onChange = e => {
 
     try {
       const res = await axios.post('/api/upload', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
         onUploadProgress: progressEvent => {
           setUploadPercentage(
             parseInt(

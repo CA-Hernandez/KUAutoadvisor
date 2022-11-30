@@ -41,8 +41,6 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
 
 
 
-  //THIS WORKS 
-  /*
   try 
   {
     let result = await client.uploadFileByStream(parserID, stream);
@@ -51,7 +49,7 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
     console.log("waiting for response...");
 
     //We have to wait for a response from the API so thats what delay is for
-    await delay(50000);
+    await delay(20000);
     let parsedData = await client.getResultsByDocument(parserID,docID, {format: 'object'});
     let transcript = parsedData[0].final;  
 
@@ -62,12 +60,9 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
     console.error(err)
     return res.status(500).json({ msg: 'An error occurred' })
   }
-  */
   
-  await delay(10000);
-
-  return res.status(200).send(data); 
-
+  
+  
 
 });
 
