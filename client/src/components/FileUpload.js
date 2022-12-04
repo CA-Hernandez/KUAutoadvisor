@@ -73,7 +73,7 @@ const onChange = e => {
       () => [
         {
           // first group - Schedule
-          Header: "Schedule",
+          Header: "Transcript",
           // First group columns
           columns: [
             {

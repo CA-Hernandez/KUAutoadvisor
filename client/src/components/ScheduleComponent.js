@@ -169,8 +169,9 @@ function ScheduleComponent() {
       </form>
 
       <h2>Add a Course</h2>
-      <form onSubmit={handleAddFormSubmit}>
+      <form onSubmit={handleAddFormSubmit} width = "50%">
         <input
+          width = "50%"
           type="text"
           name="course"
           required="required"
@@ -178,6 +179,7 @@ function ScheduleComponent() {
           onChange={handleAddFormChange}
         />
         <input
+          width = "50%"
           type="text"
           name="coursename"
           required="required"
@@ -185,6 +187,7 @@ function ScheduleComponent() {
           onChange={handleAddFormChange}
         />
         <input
+          width = "25%"
           type="text"
           name="attempted"
           required="required"

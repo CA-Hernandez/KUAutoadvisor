@@ -14,7 +14,7 @@ const Navbar = () => {
         <>
         <Nav>
             <NavLink to ='/'>
-            <img src={require('../images/logo.svg')} alt='logo' />
+            <img src={require('../images/autoadvisorlogo.svg')} alt='logo' />
                 <h1>KUAutoadvisor</h1>
             </NavLink>
                 <NavMenu>

@@ -6,8 +6,9 @@ const parserID = "cslfmvewjrvo";
 const multer = require('multer');
 const data = require('./TrasncriptJSON-2022-04-21.json')[0].final;
 const schedule = require('./schedule.json');
-
+//import {sqlReturn, sqlSend,fileToString,transcriptToSQL} from '../db/queries.js';
 const app = express();
+
 
 
 
@@ -52,6 +53,8 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
     await delay(20000);
     let parsedData = await client.getResultsByDocument(parserID,docID, {format: 'object'});
     let transcript = parsedData[0].final;  
+    
+    
 
     return res.status(200).send(transcript); 
   } 
@@ -60,9 +63,6 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
     console.error(err)
     return res.status(500).json({ msg: 'An error occurred' })
   }
-  
-  
-  
 
 });
 
@@ -86,12 +86,12 @@ catch (err)
 
 
 
-
-
 // This function delays the actions of whatever code precedes it
 function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time));
 };
+
+
 
 
 
